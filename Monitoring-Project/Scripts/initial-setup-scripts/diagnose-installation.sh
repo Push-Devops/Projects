@@ -1,5 +1,6 @@
 #!/bin/bash
 # Diagnostic script to check installation status
+# Run: sudo bash Scripts/initial-setup-scripts/diagnose-installation.sh
 
 echo "=========================================="
 echo "Installation Diagnostic"

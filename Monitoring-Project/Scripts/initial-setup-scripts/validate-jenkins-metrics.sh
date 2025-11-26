@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script to validate Jenkins Prometheus metrics
-# Run this on the server after setting up Jenkins metrics
+# Run: sudo bash Scripts/initial-setup-scripts/validate-jenkins-metrics.sh
 
 echo "=========================================="
 echo "Jenkins Prometheus Metrics Validation"

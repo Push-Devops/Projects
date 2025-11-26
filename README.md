@@ -20,6 +20,8 @@ A comprehensive monitoring solution for Jenkins CI/CD pipelines deployed on AWS.
 - [Setup Guide](Monitoring-Project/JENKINS-PROMETHEUS-SETUP.md)
 - [Testing Guide](Monitoring-Project/TESTING-GUIDE.md)
 - [Custom Metrics Guide](Monitoring-Project/Scripts/custom-metrics/CUSTOM-JENKINS-METRICS-GUIDE.md)
+- [Installation Script](Monitoring-Project/Scripts/initial-setup-scripts/install-stack.sh)
+- [Quick Test Script](Monitoring-Project/Scripts/initial-setup-scripts/quick-test.sh)
 
 ---
 
@@ -49,6 +51,9 @@ Deploy and manage Kubernetes clusters on AWS Elastic Kubernetes Service (EKS) wi
 │   ├── JENKINS-PROMETHEUS-SETUP.md
 │   ├── TESTING-GUIDE.md
 │   └── Scripts/                  # Installation & testing scripts
+│       ├── initial-setup-scripts/    # Main installation scripts
+│       ├── custom-metrics/           # Custom Jenkins metrics
+│       └── OpenTelemetry/            # OpenTelemetry setup
 │
 ├── EKS-Project/                  # AWS EKS cluster (future)
 │   └── ...

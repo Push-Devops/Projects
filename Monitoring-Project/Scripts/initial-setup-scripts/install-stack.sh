@@ -1,6 +1,6 @@
 #!/bin/bash
 # Manual installation script for Jenkins, Prometheus, Grafana
-# Run this on the server: sudo bash install-stack.sh
+# Run this on the server: sudo bash Scripts/initial-setup-scripts/install-stack.sh
 
 set -x
 set -e

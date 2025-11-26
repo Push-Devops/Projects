@@ -82,11 +82,11 @@ The OpenTelemetry Collector will receive traces from Jenkins and export them to 
 ### Installation
 
 ```bash
-# Navigate to scripts directory
-cd Monitoring-Project/Scripts/OpenTelemetry
+# From the Monitoring-Project directory
+cd Monitoring-Project
 
 # Install OTel Collector
-sudo bash install-otel-collector.sh
+sudo bash Scripts/OpenTelemetry/install-otel-collector.sh
 ```
 
 ### What This Does
@@ -125,7 +125,10 @@ Configure the collector to export traces to Grafana Tempo and Jaeger.
 ### For Local Instances
 
 ```bash
-sudo bash configure-otel-collector.sh \
+# From Monitoring-Project directory
+cd Monitoring-Project
+
+sudo bash Scripts/OpenTelemetry/configure-otel-collector.sh \
   --tempo-endpoint localhost:4317 \
   --jaeger-endpoint localhost:14250 \
   --jaeger-ui http://localhost:16686
@@ -134,7 +137,10 @@ sudo bash configure-otel-collector.sh \
 ### For Remote Instances
 
 ```bash
-sudo bash configure-otel-collector.sh \
+# From Monitoring-Project directory
+cd Monitoring-Project
+
+sudo bash Scripts/OpenTelemetry/configure-otel-collector.sh \
   --tempo-endpoint tempo.example.com:4317 \
   --jaeger-endpoint jaeger.example.com:14250 \
   --jaeger-ui http://jaeger.example.com:16686
@@ -175,7 +181,10 @@ Install the OpenTelemetry plugin in Jenkins to enable trace export.
 ### Automated Installation
 
 ```bash
-sudo bash install-opentelemetry-plugin.sh
+# From Monitoring-Project directory
+cd Monitoring-Project
+
+sudo bash Scripts/OpenTelemetry/install-opentelemetry-plugin.sh
 ```
 
 ### Manual Installation via UI
@@ -227,7 +236,10 @@ Configure Jenkins to send traces to the OpenTelemetry Collector.
 ### Automated Configuration
 
 ```bash
-sudo bash configure-opentelemetry.sh \
+# From Monitoring-Project directory
+cd Monitoring-Project
+
+sudo bash Scripts/OpenTelemetry/configure-opentelemetry.sh \
   --endpoint http://localhost:4318 \
   --service-name jenkins-pipelines
 ```
@@ -289,7 +301,7 @@ Use the provided example pipeline:
    - Click: `OK`
 
 2. **Add Pipeline Script:**
-   - Open: `jenkins-pipeline-example.groovy`
+   - Open: `Scripts/OpenTelemetry/jenkins-pipeline-example.groovy`
    - Copy entire contents
    - Paste into: Pipeline Script section
    - Click: `Save`
@@ -303,7 +315,7 @@ Use the provided example pipeline:
 For detailed tracing with metadata:
 
 1. Create pipeline job as above
-2. Use `jenkins-pipeline-advanced.groovy` instead
+2. Use `Scripts/OpenTelemetry/jenkins-pipeline-advanced.groovy` instead
 3. This includes:
    - Detailed span attributes
    - Performance metrics
@@ -463,8 +475,11 @@ Access Jaeger UI: `http://localhost:16686`
 Run the comprehensive test script:
 
 ```bash
+# From Monitoring-Project directory
+cd Monitoring-Project
+
 # Test complete setup
-sudo bash test-complete-setup.sh
+sudo bash Scripts/OpenTelemetry/test-complete-setup.sh
 ```
 
 ### Manual Verification Steps
@@ -604,20 +619,23 @@ After completing the setup:
 ## Quick Command Reference
 
 ```bash
+# From Monitoring-Project directory
+cd Monitoring-Project
+
 # Install Collector
-sudo bash install-otel-collector.sh
+sudo bash Scripts/OpenTelemetry/install-otel-collector.sh
 
 # Configure Collector
-sudo bash configure-otel-collector.sh --tempo-endpoint tempo:4317 --jaeger-endpoint jaeger:14250
+sudo bash Scripts/OpenTelemetry/configure-otel-collector.sh --tempo-endpoint tempo:4317 --jaeger-endpoint jaeger:14250
 
 # Install Plugin
-sudo bash install-opentelemetry-plugin.sh
+sudo bash Scripts/OpenTelemetry/install-opentelemetry-plugin.sh
 
 # Configure Jenkins
-sudo bash configure-opentelemetry.sh --endpoint http://localhost:4318
+sudo bash Scripts/OpenTelemetry/configure-opentelemetry.sh --endpoint http://localhost:4318
 
 # Test Setup
-sudo bash test-complete-setup.sh
+sudo bash Scripts/OpenTelemetry/test-complete-setup.sh
 ```
 
 ---

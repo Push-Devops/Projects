@@ -39,7 +39,7 @@ Before starting tests, verify:
 ### Automated Test
 
 ```bash
-sudo bash test-otel-collector.sh
+sudo bash Scripts/OpenTelemetry/test-otel-collector.sh
 ```
 
 ### Manual Test Steps
@@ -53,7 +53,7 @@ ls -la /opt/otelcol/otelcol
 **Expected:** File exists and is executable
 
 **If Failed:**
-- Run installation script: `sudo bash install-otel-collector.sh`
+- Run installation script: `sudo bash Scripts/OpenTelemetry/install-otel-collector.sh`
 - Check for errors during installation
 
 #### Step 1.2: Check Collector Version
@@ -185,7 +185,7 @@ sudo grep -A 10 "service:" /etc/otelcol/config.yaml
 ### Automated Test
 
 ```bash
-sudo bash test-otel-collector.sh
+sudo bash Scripts/OpenTelemetry/test-otel-collector.sh
 ```
 
 ### Manual Test Steps
@@ -258,7 +258,7 @@ sudo journalctl -u otelcol -n 20 --no-pager
 ### Automated Test
 
 ```bash
-sudo bash test-opentelemetry.sh
+sudo bash Scripts/OpenTelemetry/test-opentelemetry.sh
 ```
 
 ### Manual Test Steps
@@ -303,7 +303,7 @@ java -jar /tmp/jenkins-cli.jar -s http://localhost:8080 \
 **Expected:** Plugin listed (e.g., `opentelemetry:2.x.x`)
 
 **If Failed:**
-- Install plugin: `sudo bash install-opentelemetry-plugin.sh`
+- Install plugin: `sudo bash Scripts/OpenTelemetry/install-opentelemetry-plugin.sh`
 
 #### Step 4.5: Verify Plugin in UI
 
@@ -324,7 +324,7 @@ java -jar /tmp/jenkins-cli.jar -s http://localhost:8080 \
 ### Automated Test
 
 ```bash
-sudo bash test-opentelemetry.sh
+sudo bash Scripts/OpenTelemetry/test-opentelemetry.sh
 ```
 
 ### Manual Test Steps
@@ -605,7 +605,10 @@ Run a test pipeline in Jenkins.
 #### Step 10.1: Run Complete Test Script
 
 ```bash
-sudo bash test-complete-setup.sh
+# From Monitoring-Project directory
+cd Monitoring-Project
+
+sudo bash Scripts/OpenTelemetry/test-complete-setup.sh
 ```
 
 This script tests all components automatically.
@@ -618,8 +621,9 @@ This script tests all components automatically.
    ```
 
 2. **Run Complex Pipeline:**
-   - Use `jenkins-pipeline-advanced.groovy`
+   - Use `Scripts/OpenTelemetry/jenkins-pipeline-advanced.groovy`
    - Create pipeline job
+   - Copy script content into pipeline
    - Run it
 
 3. **Verify in Collector:**
@@ -735,14 +739,17 @@ After completing all tests, verify:
 ## Quick Test Commands
 
 ```bash
+# From Monitoring-Project directory
+cd Monitoring-Project
+
 # Test Collector
-sudo bash test-otel-collector.sh
+sudo bash Scripts/OpenTelemetry/test-otel-collector.sh
 
 # Test Jenkins Plugin
-sudo bash test-opentelemetry.sh
+sudo bash Scripts/OpenTelemetry/test-opentelemetry.sh
 
-# Test Complete Setup (if available)
-sudo bash test-complete-setup.sh
+# Test Complete Setup
+sudo bash Scripts/OpenTelemetry/test-complete-setup.sh
 ```
 
 ---

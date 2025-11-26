@@ -1,6 +1,6 @@
 #!/bin/bash
 # Quick testing script for all components
-# Run this on the server after deployment
+# Run this on the server: sudo bash Scripts/initial-setup-scripts/quick-test.sh
 
 echo "=========================================="
 echo "Quick Component Test"
