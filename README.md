@@ -46,6 +46,55 @@ A production-ready Django REST API application deployed on AWS ECS Fargate with 
 
 ---
 
+### 🔵🟢 [Blue-Green Deployment](Blue-green-Deployment/)
+**Production-Level Blue-Green Deployment CI/CD Pipeline**
+
+A complete blue-green deployment solution for zero-downtime application upgrades on AWS EKS. Includes automated CI/CD pipeline with Jenkins, SonarQube code quality analysis, Trivy security scanning, and Nexus artifact repository.
+
+**Key Features:**
+- AWS EKS cluster deployment using Terraform
+- Blue-Green deployment strategy for zero downtime
+- Jenkins CI/CD pipeline with automated testing
+- SonarQube code quality and security analysis
+- Trivy vulnerability scanning (filesystem and container images)
+- Nexus artifact repository integration
+- Spring Boot banking application example
+- MySQL database deployment
+- Traffic switching between blue and green environments
+- Kubernetes RBAC configuration
+- Prometheus monitoring setup
+
+**Quick Links:**
+- [Project README](Blue-green-Deployment/README.md)
+- [RBAC Setup Guide](Blue-green-Deployment/Setup-RBAC.md)
+- [EKS Cluster Terraform](Blue-green-Deployment/Cluster/)
+
+---
+
+### 🏗️ [Three-Layer Terraform Architecture](Three-Layer-Terr-AWS-Code/)
+**Production-Ready Modular Terraform Infrastructure**
+
+A comprehensive three-layer Terraform architecture following best practices for AWS infrastructure management. Demonstrates modular design with resource modules, infrastructure modules, and composition layers for scalable, maintainable infrastructure as code.
+
+**Key Features:**
+- Three-layer architecture pattern (Resource → Infrastructure → Composition)
+- Remote backend with S3, DynamoDB, and KMS encryption
+- VPC infrastructure with public, private, and database subnets
+- Security groups with configurable ingress rules
+- EKS-ready VPC configuration
+- Multi-environment support (dev, staging, prod)
+- Modular and reusable components
+- Best practices for Terraform organization
+- Customer-managed KMS keys for encryption
+- State locking with DynamoDB
+
+**Quick Links:**
+- [Project README](Three-Layer-Terr-AWS-Code/README.md)
+- [Remote Backend Module](Three-Layer-Terr-AWS-Code/remote_backend/)
+- [VPC Infrastructure](Three-Layer-Terr-AWS-Code/VPC-Infra/)
+
+---
+
 ### ⚙️ [AWS EKS Project](EKS-Project/) - *Coming Soon*
 **Kubernetes Cluster on AWS EKS**
 
@@ -84,6 +133,33 @@ Deploy and manage Kubernetes clusters on AWS Elastic Kubernetes Service (EKS) wi
 │   ├── proxy/                    # Nginx proxy container
 │   └── README.md
 │
+├── Blue-green-Deployment/       # Blue-Green Deployment on EKS
+│   ├── Cluster/                  # EKS Terraform infrastructure
+│   │   ├── main.tf               # EKS cluster, VPC, networking
+│   │   ├── variables.tf          # Terraform variables
+│   │   ├── output.tf             # Cluster outputs
+│   │   └── monitor/              # Prometheus configuration
+│   ├── src/                      # Spring Boot application
+│   ├── Jenkinsfile               # CI/CD pipeline definition
+│   ├── Dockerfile                # Application container
+│   ├── app-deployment-blue.yml   # Blue environment deployment
+│   ├── app-deployment-green.yml  # Green environment deployment
+│   ├── mysql-ds.yml              # MySQL database deployment
+│   ├── bankapp-service.yml      # Kubernetes service
+│   ├── Setup-RBAC.md             # RBAC configuration guide
+│   └── README.md
+│
+├── Three-Layer-Terr-AWS-Code/   # Three-Layer Terraform Architecture
+│   ├── remote_backend/          # Remote Backend Infrastructure
+│   │   ├── composition/         # Environment compositions
+│   │   ├── infra_modules/        # Infrastructure modules
+│   │   └── resource_modules/     # Resource modules
+│   ├── VPC-Infra/                # VPC Infrastructure
+│   │   ├── composition/          # Environment compositions
+│   │   ├── infra_modules/         # Infrastructure modules
+│   │   └── resource_modules/     # Resource modules
+│   └── README.md
+│
 ├── EKS-Project/                  # AWS EKS cluster (future)
 │   └── ...
 │
@@ -117,6 +193,8 @@ Each project is independent and can be deployed separately. Navigate to the spec
 |---------|-------------|--------|---------------|
 | [Monitoring Stack](Monitoring-Project/) | Jenkins + Prometheus + Grafana | ✅ Active | [Setup Guide](Monitoring-Project/JENKINS-PROMETHEUS-SETUP.md) |
 | [AWS ECS Project](AWS-ECS-PROJECT/) | Django API on ECS Fargate | ✅ Active | [Project README](AWS-ECS-PROJECT/README.md) |
+| [Blue-Green Deployment](Blue-green-Deployment/) | Blue-Green CI/CD on EKS | ✅ Active | [Project README](Blue-green-Deployment/README.md) |
+| [Three-Layer Terraform](Three-Layer-Terr-AWS-Code/) | Modular Terraform Architecture | ✅ Active | [Project README](Three-Layer-Terr-AWS-Code/README.md) |
 | [EKS Project](EKS-Project/) | AWS EKS Kubernetes Cluster | 🔜 Coming Soon | TBD |
 
 ## General Workflow

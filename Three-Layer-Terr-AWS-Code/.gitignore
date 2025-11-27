@@ -1,0 +1,44 @@
+# Local .terraform directories
+**/.terraform/*
+**/.terraform.tfstate.lock.info
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Sensitive variable files
+terraform.tfvars
+*.auto.tfvars
+*.tfvars.json
+
+# Override files (intended for local use only)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Provider plugin and lock files
+.terraform.lock.hcl
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp
+*.log
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
