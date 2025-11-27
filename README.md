@@ -25,6 +25,27 @@ A comprehensive monitoring solution for Jenkins CI/CD pipelines deployed on AWS.
 
 ---
 
+### 🐳 [AWS ECS Project](AWS-ECS-PROJECT/)
+**Django REST API on AWS ECS Fargate**
+
+A production-ready Django REST API application deployed on AWS ECS Fargate with RDS PostgreSQL, Application Load Balancer, and EFS for persistent storage.
+
+**Key Features:**
+- ECS Fargate cluster with multi-container tasks
+- RDS PostgreSQL database
+- Application Load Balancer with Route53 DNS
+- EFS for persistent media/static storage
+- VPC with public/private subnets
+- VPC endpoints for ECR, CloudWatch, SSM
+- CloudWatch logging and monitoring
+- Terraform infrastructure as code
+
+**Quick Links:**
+- [Project README](AWS-ECS-PROJECT/README.md)
+- [Review & Suggestions](AWS-ECS-PROJECT/REVIEW-AND-SUGGESTIONS.md)
+
+---
+
 ### ⚙️ [AWS EKS Project](EKS-Project/) - *Coming Soon*
 **Kubernetes Cluster on AWS EKS**
 
@@ -54,6 +75,14 @@ Deploy and manage Kubernetes clusters on AWS Elastic Kubernetes Service (EKS) wi
 │       ├── initial-setup-scripts/    # Main installation scripts
 │       ├── custom-metrics/           # Custom Jenkins metrics
 │       └── OpenTelemetry/            # OpenTelemetry setup
+│
+├── AWS-ECS-PROJECT/              # Django API on ECS Fargate
+│   ├── app/                      # Django application
+│   ├── infra/                    # Terraform infrastructure
+│   │   ├── setup/                # Initial setup (ECR, IAM)
+│   │   └── deploy/               # Main deployment (ECS, RDS, ALB)
+│   ├── proxy/                    # Nginx proxy container
+│   └── README.md
 │
 ├── EKS-Project/                  # AWS EKS cluster (future)
 │   └── ...
@@ -87,6 +116,7 @@ Each project is independent and can be deployed separately. Navigate to the spec
 | Project | Description | Status | Documentation |
 |---------|-------------|--------|---------------|
 | [Monitoring Stack](Monitoring-Project/) | Jenkins + Prometheus + Grafana | ✅ Active | [Setup Guide](Monitoring-Project/JENKINS-PROMETHEUS-SETUP.md) |
+| [AWS ECS Project](AWS-ECS-PROJECT/) | Django API on ECS Fargate | ✅ Active | [Project README](AWS-ECS-PROJECT/README.md) |
 | [EKS Project](EKS-Project/) | AWS EKS Kubernetes Cluster | 🔜 Coming Soon | TBD |
 
 ## General Workflow
