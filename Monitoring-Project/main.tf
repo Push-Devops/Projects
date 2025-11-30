@@ -60,10 +60,10 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
-# Security group for Jenkins, Prometheus, Grafana
+# Security group for Jenkins, Prometheus, Grafana, OpenTelemetry Collector
 resource "aws_security_group" "monitoring" {
   name        = "${var.project_name}-sg"
-  description = "Allow SSH, Jenkins, Prometheus, Grafana"
+  description = "Allow SSH, Jenkins, Prometheus, Grafana, OpenTelemetry Collector"
   vpc_id      = aws_vpc.main.id
 
   # SSH
@@ -96,6 +96,33 @@ resource "aws_security_group" "monitoring" {
     to_port     = 3000
     protocol    = "tcp"
     cidr_blocks = [var.allowed_http_cidr]
+  }
+
+  # OpenTelemetry Collector - gRPC
+  ingress {
+    from_port   = 4317
+    to_port     = 4317
+    protocol    = "tcp"
+    cidr_blocks = [var.allowed_http_cidr]
+    description = "OpenTelemetry Collector gRPC endpoint"
+  }
+
+  # OpenTelemetry Collector - HTTP
+  ingress {
+    from_port   = 4318
+    to_port     = 4318
+    protocol    = "tcp"
+    cidr_blocks = [var.allowed_http_cidr]
+    description = "OpenTelemetry Collector HTTP endpoint"
+  }
+
+  # OpenTelemetry Collector - Metrics (optional)
+  ingress {
+    from_port   = 8888
+    to_port     = 8888
+    protocol    = "tcp"
+    cidr_blocks = [var.allowed_http_cidr]
+    description = "OpenTelemetry Collector metrics endpoint"
   }
 
   egress {
