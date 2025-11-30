@@ -95,6 +95,23 @@ A comprehensive three-layer Terraform architecture following best practices for 
 
 ---
 
+### 🔍 [Kubernetes & OCI Troubleshooting](Kubernetes-OCI-Troubleshooting/)
+**Comprehensive Guide for EKS and Container Debugging**
+
+A dedicated troubleshooting resource focusing on the OSI model layer-by-layer approach for diagnosing Kubernetes, Networking, and Identity issues.
+
+**Key Features:**
+- **OSI Model Methodology**: Systematic debugging from Physical Layer (1) to Application Layer (7) & Identity (8).
+- **IRSA Deep Dive**: Detailed steps to verify IAM Roles for Service Accounts.
+- **Connectivity Checks**: Debugging DNS, TCP, and Firewall issues inside K8s.
+- **Real-World Reports**: Detailed incident reports with commands and fixes.
+
+**Quick Links:**
+- [EKS to S3 Troubleshooting Guide](Kubernetes-OCI-Troubleshooting/EKS-S3-TROUBLESHOOTING.md)
+- [Detailed Troubleshooting Report](Kubernetes-OCI-Troubleshooting/TROUBLESHOOTING-REPORT.md)
+
+---
+
 ### ⚙️ [AWS EKS Project](EKS-Project/) - *Coming Soon*
 **Kubernetes Cluster on AWS EKS**
 
@@ -160,6 +177,10 @@ Deploy and manage Kubernetes clusters on AWS Elastic Kubernetes Service (EKS) wi
 │   │   └── resource_modules/     # Resource modules
 │   └── README.md
 │
+├── Kubernetes-OCI-Troubleshooting/ # Debugging Guides & Reports
+│   ├── EKS-S3-TROUBLESHOOTING.md   # OSI Model Debug Guide
+│   └── TROUBLESHOOTING-REPORT.md   # Real-world Debug Log
+│
 ├── EKS-Project/                  # AWS EKS cluster (future)
 │   └── ...
 │
@@ -195,6 +216,7 @@ Each project is independent and can be deployed separately. Navigate to the spec
 | [AWS ECS Project](AWS-ECS-PROJECT/) | Django API on ECS Fargate | ✅ Active | [Project README](AWS-ECS-PROJECT/README.md) |
 | [Blue-Green Deployment](Blue-green-Deployment/) | Blue-Green CI/CD on EKS | ✅ Active | [Project README](Blue-green-Deployment/README.md) |
 | [Three-Layer Terraform](Three-Layer-Terr-AWS-Code/) | Modular Terraform Architecture | ✅ Active | [Project README](Three-Layer-Terr-AWS-Code/README.md) |
+| [Kubernetes Troubleshooting](Kubernetes-OCI-Troubleshooting/) | EKS & OSI Debugging Guides | ✅ Active | [Guide](Kubernetes-OCI-Troubleshooting/EKS-S3-TROUBLESHOOTING.md) |
 | [EKS Project](EKS-Project/) | AWS EKS Kubernetes Cluster | 🔜 Coming Soon | TBD |
 
 ## General Workflow
@@ -256,4 +278,4 @@ Navigate to the project folder and check the documentation files for detailed in
 
 ---
 
-**Last Updated**: 2025-01-26
+**Last Updated**: 2025-11-29
